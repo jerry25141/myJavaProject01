@@ -1,6 +1,6 @@
 package java_middle_quiz.lesson02;
 
-//JPA204 公倍數計算
+//JPA204 公倍數計算 整除(5, 9)
 //(1) 請設計一程式，能判斷使用者所輸入的整數，是否能同時被 5、9 整除。
 //(2) 程式執行時，畫面顯示【Input:】，讓使用者輸入一個整數。
 //(3) 計算是否能同時被 5、9 整除。
@@ -15,13 +15,32 @@ package java_middle_quiz.lesson02;
 // No
 
 //////////////////////////////////////////////////////
+import java.util.Scanner;
 //////////////////////////////////////////////////////
-
 public class quiz02_4 {
-
     public static void main(String[] args) {
-        // 
+        Scanner myScanner = new Scanner(System.in);
 
+        System.out.println("Input:");
+        int a = Integer.parseInt(myScanner.nextLine());
+
+        boolean flag = false;
+        for (int i = 0; i < 2; i++) {
+            // 判斷是否被 5和9 整除
+            if (a % 5 == 0) {
+                if (a % 9 == 0) {
+                    flag = true;
+                    break; // 【!重點!】跳出for迴圈
+                }
+            }
+        }
+
+        // 輸出
+        if (flag)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
+        myScanner.close();
     }
-
 }
