@@ -8,24 +8,14 @@ import java.util.Scanner;
 public class test_1 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int num = scanner.nextInt();
+        Scanner myScanner = new Scanner(System.in);
+        int score_Chinese = Integer.parseInt(myScanner.nextLine());
 
-        String result = num + "是";
-        if (num % 2 == 0) {
-            result += "2";
-        }
-        if (num % 3 == 0) {
-            result += (result.endsWith("2") ? "," : "") + "3";
-        }
-        if (num % 2 == 0 && num % 3 == 0) {
-            result += ",6";
-        } else {
-            result = num + "不是2、3、6的倍數";
-        }
+        boolean is_pass_chinese = (score_Chinese >= 60);
 
-        System.out.println(result);
-        scanner.close();
+        if (is_pass_chinese)
+            System.out.println("通過");
+        else
+            System.out.println("沒過");
     }
 }

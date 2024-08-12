@@ -28,12 +28,48 @@ package java_middle_quiz.lesson02;
 // Math failed.
 
 //////////////////////////////////////////////////////
+import java.util.Scanner;
 //////////////////////////////////////////////////////
-
 public class quiz02_6 {
 
     public static void main(String[] args) {
-        
-    }
+        Scanner myScanner = new Scanner(System.in);
 
+        // 重複執行 4 次 //
+        for (int i = 0; i < 4; i++) {
+
+            // Input 輸入 //
+            // 國文
+            System.out.println("Input Chinese score:");
+            int score_Chinese = Integer.parseInt(myScanner.nextLine());
+            // 英文
+            System.out.println("Input English score:");
+            int score_English = Integer.parseInt(myScanner.nextLine());
+            // 數學
+            System.out.println("Input Math score:");
+            int score_Math = Integer.parseInt(myScanner.nextLine());
+
+            // 判斷 + output //
+            boolean is_pass_chinese = (score_Chinese >= 60);
+            boolean is_pass_english = (score_English >= 60);
+            boolean is_pass_math = (score_Math >= 60);
+
+            // 如果都及格
+            if (is_pass_chinese && is_pass_english && is_pass_math) {
+                System.out.println("All pass.");
+            } else {
+                // 個別科目 不及格 output
+                if (!is_pass_chinese)
+                    System.out.println("Chinese failed");
+                if (!is_pass_english)
+                    System.out.println("English failed");
+                if (!is_pass_math)
+                    System.out.println("Math failed");
+            }
+            
+        }
+
+
+        myScanner.close();
+    }
 }
