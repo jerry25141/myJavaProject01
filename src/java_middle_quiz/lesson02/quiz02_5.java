@@ -24,13 +24,13 @@ package java_middle_quiz.lesson02;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz02_5 {
+    
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-
         /////////////////
         // 重複執行 4次 //
         for (int i = 0; i < 4; i++) {
 
-            Scanner myScanner = new Scanner(System.in);
 
             System.out.println("Enter an integer:");
             int a = Integer.parseInt(myScanner.nextLine());

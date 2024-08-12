@@ -18,8 +18,8 @@ package java_middle_quiz.lesson02;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz02_4 {
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
 
         System.out.println("Input:");
         int a = Integer.parseInt(myScanner.nextLine());

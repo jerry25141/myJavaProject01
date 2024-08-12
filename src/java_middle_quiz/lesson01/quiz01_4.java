@@ -18,8 +18,8 @@ package java_middle_quiz.lesson01;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz01_4 {
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
         // 輸入 (x1, y1)
         System.out.println("【輸入第1組的x和y座標：】");
         int x1 = Integer.parseInt(myScanner.next());

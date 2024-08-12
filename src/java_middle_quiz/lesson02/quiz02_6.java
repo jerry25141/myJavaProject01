@@ -31,9 +31,9 @@ package java_middle_quiz.lesson02;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz02_6 {
-
+    
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
 
         // 重複執行 4 次 //
         for (int i = 0; i < 4; i++) {

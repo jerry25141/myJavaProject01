@@ -17,8 +17,8 @@ package java_middle_quiz.lesson02;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz02_3 {
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
 
         for (int i = 0; i < 2; i++) {
             System.out.println("Input an integer:");

@@ -13,11 +13,11 @@ import java.util.Scanner;
 //////////////////////////////////////////////////////
 
 public class quiz01_3 {
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
 
         System.out.println("【Please input:】");
 
-        Scanner myScanner = new Scanner(System.in);
         int a, b, c;
         a = Integer.parseInt(myScanner.next());
         b = Integer.parseInt(myScanner.next());

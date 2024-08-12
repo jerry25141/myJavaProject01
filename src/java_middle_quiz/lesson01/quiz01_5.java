@@ -23,10 +23,8 @@ package java_middle_quiz.lesson01;
 import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz01_5 {
+    static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
-        Scanner myScanner = new Scanner(System.in);
-
         // 輸入姓名
         System.out.println("請輸入您的姓名：");
         String name = myScanner.nextLine();

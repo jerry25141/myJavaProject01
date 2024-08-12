@@ -14,13 +14,13 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 public class quiz01_2 {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         // 定義公斤轉磅的轉換常數
         final double kg_toPound = 2.20462;
 
         System.out.print("請輸入公斤數 (kg): ");
         // 創建 Scanner 物件，用于讀取使用者輸入
-        Scanner scanner = new Scanner(System.in);
         double kilograms = scanner.nextDouble();
 
         // 計算磅數
