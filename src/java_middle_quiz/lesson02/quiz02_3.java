@@ -15,7 +15,6 @@ package java_middle_quiz.lesson02;
 
 //////////////////////////////////////////////////////
 import java.util.Scanner;
-
 //////////////////////////////////////////////////////
 public class quiz02_3 {
     public static void main(String[] args) {
@@ -33,7 +32,5 @@ public class quiz02_3 {
         }
 
         myScanner.close();
-
     }
-
 }
