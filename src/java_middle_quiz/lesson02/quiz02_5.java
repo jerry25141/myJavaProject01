@@ -25,54 +25,60 @@ import java.util.Scanner;
 //////////////////////////////////////////////////////
 public class quiz02_5 {
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
 
-        System.out.println("Enter an integer:");
-        int a = Integer.parseInt(myScanner.nextLine());
+        /////////////////
+        // 重複執行 4次 //
+        for (int i = 0; i < 4; i++) {
 
-        /////////////
-        // 定義 boolean，如果整除 = true
-        boolean is_div_2 = (a % 2 == 0);
-        boolean is_div_3 = (a % 3 == 0);
-        boolean is_div_6 = (a % 6 == 0);
+            Scanner myScanner = new Scanner(System.in);
 
-        /////////////
-        // 輸出判斷 //
-        StringBuilder ans = new StringBuilder();
+            System.out.println("Enter an integer:");
+            int a = Integer.parseInt(myScanner.nextLine());
 
-        // 不是倍數 輸出 //
-        if (!is_div_2 && !is_div_3 && !is_div_6)
-            ans.append(a + "不是2、3、6的倍數");
+            /////////////
+            // 定義 boolean，如果整除 = true
+            boolean is_div_2 = (a % 2 == 0);
+            boolean is_div_3 = (a % 3 == 0);
+            boolean is_div_6 = (a % 6 == 0);
 
-        // 其中一個是倍數 //
-        // 組合 2、3、6的倍數，(懶的演算法，窮舉~)
-        ans.append(a + "是");
-        // 2
-        if (is_div_2 && !is_div_3 && !is_div_6)
-            ans.append("2");
-        // 3
-        if (!is_div_2 && is_div_3 && !is_div_6)
-            ans.append("3");
-        // 6
-        if (!is_div_2 && !is_div_3 && is_div_6)
-            ans.append("6");
-        // 2 3
-        if (is_div_2 && is_div_3 && !is_div_6)
-            ans.append("2、3");
-        // 2 6
-        if (is_div_2 && !is_div_3 && is_div_6)
-            ans.append("2、6");
-        // 3 6
-        if (!is_div_2 && is_div_3 && is_div_6)
-            ans.append("3、6");
-        // 2 3 6
-        if (is_div_2 && is_div_3 && is_div_6)
-            ans.append("2、3、6");
+            /////////////
+            // 輸出判斷 //
+            StringBuilder ans = new StringBuilder();
 
-        // 輸出答案 //
-        ans.append("的倍數");
-        System.out.println(ans);
+            // 不是倍數 輸出 //
+            if (!is_div_2 && !is_div_3 && !is_div_6)
+                ans.append(a + "不是2、3、6的倍數");
 
-        myScanner.close();
+            // 其中一個是倍數 //
+            // 組合 2、3、6的倍數，(懶的演算法，窮舉~)
+            ans.append(a + "是");
+            // 2
+            if (is_div_2 && !is_div_3 && !is_div_6)
+                ans.append("2");
+            // 3
+            if (!is_div_2 && is_div_3 && !is_div_6)
+                ans.append("3");
+            // 6
+            if (!is_div_2 && !is_div_3 && is_div_6)
+                ans.append("6");
+            // 2 3
+            if (is_div_2 && is_div_3 && !is_div_6)
+                ans.append("2、3");
+            // 2 6
+            if (is_div_2 && !is_div_3 && is_div_6)
+                ans.append("2、6");
+            // 3 6
+            if (!is_div_2 && is_div_3 && is_div_6)
+                ans.append("3、6");
+            // 2 3 6
+            if (is_div_2 && is_div_3 && is_div_6)
+                ans.append("2、3、6");
+
+            // 輸出答案 //
+            ans.append("的倍數");
+            System.out.println(ans);
+
+            myScanner.close();
+        }
     }
 }
