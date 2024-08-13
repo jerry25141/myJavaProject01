@@ -11,8 +11,6 @@ import java.util.Scanner;
 //(2) 於後方輸入數字，進行單位轉換，顯示 kg = ponds。 ex: 15.000000 kg = 33.069300 ponds
 
 
-import java.util.Scanner;
-
 public class quiz01_2 {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
