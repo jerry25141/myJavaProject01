@@ -24,6 +24,8 @@ package java_middle_quiz.lesson02;
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz02_9 {
+    // Java的垃圾回收機制，會自動清理 Scanner 的資源
+    // 但我有機會還是會寫 try Scanner
     static Scanner myScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -34,35 +36,41 @@ public class quiz02_9 {
     }
 
     public static void test() {
-        double x, y;
-        System.out.printf("請輸入x座標：");
-        x = myScanner.nextDouble();
-        System.out.printf("請輸入y座標：");
-        y = myScanner.nextDouble();
 
-        // 判斷 x or y 軸上
-        if (x == 0)
-            System.out.printf("(%.2f,%.2f)在y軸上%n", x, y);
-        else if (y == 0)
-            System.out.printf("(%.2f,%.2f)在x軸上%n", x, y);
+        try (Scanner myScanner = new Scanner(System.in)) {
 
-        // 一象限 x > 0 and y > 0 //
-        // 四象限 x > 0 and y < 0 //
-        // 二象限 x < 0 and y > 0 //
-        // 三象限 x < 0 and y < 0 //
-        
-        // 先判斷 一and四 象限
-        else if (x > 0) {
-            if (y > 0)
-                System.out.printf("(%.2f,%.2f)在第一象限%n", x, y);
-            else
-                System.out.printf("(%.2f,%.2f)在第四象限%n", x, y);
-        // 再判斷 二and三 象限
-        } else {
-            if (y > 0)
-                System.out.printf("(%.2f,%.2f)在第二象限%n", x, y);
-            else
-                System.out.printf("(%.2f,%.2f)在第三象限%n", x, y);
+            double x, y;
+            System.out.printf("請輸入x座標：");
+            x = myScanner.nextDouble();
+            System.out.printf("請輸入y座標：");
+            y = myScanner.nextDouble();
+
+            // 判斷 x or y 軸上
+            if (x == 0)
+                System.out.printf("(%.2f,%.2f)在y軸上%n", x, y);
+            else if (y == 0)
+                System.out.printf("(%.2f,%.2f)在x軸上%n", x, y);
+
+            // 一象限 x > 0 and y > 0 //
+            // 四象限 x > 0 and y < 0 //
+            // 二象限 x < 0 and y > 0 //
+            // 三象限 x < 0 and y < 0 //
+
+            // 先判斷 一and四 象限
+            else if (x > 0) {
+                if (y > 0)
+                    System.out.printf("(%.2f,%.2f)在第一象限%n", x, y);
+                else
+                    System.out.printf("(%.2f,%.2f)在第四象限%n", x, y);
+                // 再判斷 二and三 象限
+            } else {
+                if (y > 0)
+                    System.out.printf("(%.2f,%.2f)在第二象限%n", x, y);
+                else
+                    System.out.printf("(%.2f,%.2f)在第三象限%n", x, y);
+            }
+        } catch (Exception e) {
+            System.out.println("輸入格式錯誤!!");
         }
     }
 }

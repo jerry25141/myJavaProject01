@@ -28,8 +28,11 @@ package java_middle_quiz.lesson02;
 
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz02_8 {
+    // Java的垃圾回收機制，會自動清理 Scanner 的資源
+    // 但我有機會還是會寫 try Scanner
     static Scanner myScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -38,22 +41,28 @@ public class quiz02_8 {
         test_score();
         test_score();
         test_score();
-
-        myScanner.close();
     }
 
     public static void test_score() {
-        System.out.println("Input:");
-        int g = myScanner.nextInt();
-        if (g >= 90)
-            System.out.println("Your grade is A");
-        else if (g >= 80)
-            System.out.println("Your grade is B");
-        else if (g >= 70)
-            System.out.println("Your grade is C");
-        else if (g >= 60)
-            System.out.println("Your grade is D");
-        else
-            System.out.println("Your grade is F");
+        // 之後都應該會用這種寫法 try Scanner 寫法
+        try (Scanner myScanner = new Scanner(System.in)) {
+
+            System.out.println("Input:");
+            int g = myScanner.nextInt();
+
+            if (g >= 90)
+                System.out.println("Your grade is A");
+            else if (g >= 80)
+                System.out.println("Your grade is B");
+            else if (g >= 70)
+                System.out.println("Your grade is C");
+            else if (g >= 60)
+                System.out.println("Your grade is D");
+            else
+                System.out.println("Your grade is F");
+
+        } catch (Exception e) {
+            System.out.println("輸入格式錯誤!!");
+        }
     }
 }
