@@ -24,7 +24,7 @@ package java_middle_quiz.lesson02;
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz02_9 {
-    static Scanner keyboard = new Scanner(System.in);
+    static Scanner myScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         test();
@@ -36,18 +36,28 @@ public class quiz02_9 {
     public static void test() {
         double x, y;
         System.out.printf("請輸入x座標：");
-        x = keyboard.nextDouble();
+        x = myScanner.nextDouble();
         System.out.printf("請輸入y座標：");
-        y = keyboard.nextDouble();
+        y = myScanner.nextDouble();
+
+        // 判斷 x or y 軸上
         if (x == 0)
             System.out.printf("(%.2f,%.2f)在y軸上%n", x, y);
         else if (y == 0)
             System.out.printf("(%.2f,%.2f)在x軸上%n", x, y);
+
+        // 一象限 x > 0 and y > 0 //
+        // 四象限 x > 0 and y < 0 //
+        // 二象限 x < 0 and y > 0 //
+        // 三象限 x < 0 and y < 0 //
+        
+        // 先判斷 一and四 象限
         else if (x > 0) {
             if (y > 0)
                 System.out.printf("(%.2f,%.2f)在第一象限%n", x, y);
             else
                 System.out.printf("(%.2f,%.2f)在第四象限%n", x, y);
+        // 再判斷 二and三 象限
         } else {
             if (y > 0)
                 System.out.printf("(%.2f,%.2f)在第二象限%n", x, y);
