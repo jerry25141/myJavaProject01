@@ -6,27 +6,6 @@ package java_middle_quiz.lesson03;
 //(3) 請設計一程式，找出 1000 以內的所有完美數。
 //(4) 顯示如執行結果參考畫面。
 //----------------------------------------------------------------------------------
-// 1~1000中的完美數有: 6 28 496 
-
-// import java.util.*;
-
-// public class JPA303a {  
-//     public static void main(String argv[]) {
-//         int i, num, sum = 0;
-//         System.out.printf("1~1000中的完美數有: ");
-//         for (i = 1; i <= 1000; i++) {
-//             sum = 0;
-//             for (num = 1; num < i; num++) {
-//                 if (i % num == 0)
-//                     sum += num;
-//             }
-//             if (i == sum) {
-//                 System.out.printf("%d ", num);
-//             }
-//         }
-//         System.out.printf("\n");
-//     }
-// }
 
 //////////////////////////////////////////////////////
 import java.util.*;
@@ -35,5 +14,23 @@ public class quiz03_03 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
         
+        int num, sum = 0;
+        
+        System.out.print("1~1000中的完美數有: ");
+        // i 代表進行中的數字 1~1000
+        for (int i = 1; i < 1000; i++) {
+            sum = 0;    // 初始化 計算相加
+            for (num = 1; num < i; num++) {
+                // num整除代表 因數
+                if (i % num == 0)
+                    sum += num;
+            }
+            // 如果 數字i = 因數相加sum
+            if (i == sum) {
+                System.out.print(num + " ");
+            }
+        }
+
+        System.out.println();
     }
 }
