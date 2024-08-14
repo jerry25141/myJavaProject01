@@ -17,33 +17,27 @@ package java_middle_quiz.lesson03;
 // 餐點總費用:948
 // 5 道餐點平均費用為: 189.60 
 
-// import java.util.*;
-
-// public class JPA304a {
-//     public static void main(String argv[]) {
-//         int total = 0;
-//         int s = 0;
-//         int count = 0;
-//         double average;
-//         System.out.print("Please enter meal dollars or enter -1 to stop: ");
-//         s = new Scanner(System.in).nextInt();
-//         while (s != -1) {
-//             total += s;
-//             count++;
-//             System.out.print("Please enter meal dollars or enter -1 to stop: ");
-//             s = new Scanner(System.in).nextInt();
-//         }
-//         System.out.println("餐點總費用:" + total);
-//         System.out.printf(" %d 道餐點平均費用為: %.2f %n", count, 1.0 * total / count);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz03_04 {
     static Scanner myScanner = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String argv[]) {
+        int total = 0;
+        int count = 0;
+
+        System.out.print("Please enter meal dollars or enter -1 to stop: ");
         
+        int s = 0;
+        s = myScanner.nextInt();   // 第一次輸入數值
+        // 如果 -1 則停止
+        while (s != -1) {
+            total += s;
+            count++;
+            System.out.print("Please enter meal dollars or enter -1 to stop: ");
+            s = myScanner.nextInt();
+        }
+        System.out.println("餐點總費用:" + total);
+        System.out.printf(" %d 道餐點平均費用為: %.2f %n", count, 1.0 * total / count);
     }
 }
