@@ -39,7 +39,15 @@ import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz03_02 {
     static Scanner myScanner = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String argv[]) {
+        int i = 1, j = 1, count = 0;
         
+        // 目標 count = 27 => i*j = 3*9
+        for (i = 1; i <= 3; i++) { // 第一個迴圈，i從1到3
+            for (j = 1; j <= 9; j++) {
+                count++;
+            }
+        }
+        System.out.println("count = " + count);
     }
 }
