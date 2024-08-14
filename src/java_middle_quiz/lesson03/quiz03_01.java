@@ -29,5 +29,15 @@ public class quiz03_01 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
         
+        System.out.println("Input N:");
+        int N = myScanner.nextInt();
+
+        // 定義 count，使用for累加
+        int count = 0;
+        for (int i = 1; i < N+1; i++) {
+            count = count + i;
+        }
+
+        System.out.println("1 + ... + " + N + " = " + count);
     }
 }
