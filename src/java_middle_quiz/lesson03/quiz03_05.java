@@ -17,35 +17,36 @@ package java_middle_quiz.lesson03;
 // 6
 // 6!: 720
 
-// import java.util.*;
-
-// public class JPA305a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String[] args) {
-//         test();
-//         test();
-//         test();
-//     }
-//     public static void test() {
-//         System.out.println("Please enter value:");
-//         int i, total = 1, n = keyboard.nextInt();
-//         if (n >= 1 && n <= 10) {
-//             for (i = 1; i <= n; i++) {
-//                 total = total * i;
-//             }
-//             System.out.printf("%d!: %d", n, total);
-//             System.out.println();
-//         } else
-//             System.out.println("Error, the value is out of range.");
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz03_05 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+        test();
+        test();
+    }
+
+    public static void test() {
+        try {
+            System.out.println("Please enter one value:");
+            int n = myScanner.nextInt();
+
+            // 計算 n!
+            if(n <= 10 && n >= 1) {
+                int ans = 1;
+                for (int i = 1; i <= n; i++) 
+                    ans *= i;
+                System.out.println(n + "!: " + ans);
+            }
+            else {
+                // 範圍錯誤
+                System.out.println("Error, the value is out of range.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("輸入錯誤");
+        }
     }
 }
