@@ -14,39 +14,38 @@ package java_middle_quiz.lesson03;
 // Input:
 // 999 10
 
-// import java.util.*;
-
-// public class JPA306a {
-//     public static void main(String[] args) {
-//         int num1, num2;
-//         Scanner input = new Scanner(System.in);
-//         System.out.println("Input:");
-//         num1 = input.nextInt();
-//         while (num1 != 999) {
-//             num2 = input.nextInt();
-//             System.out.println(powerOf(num1, num2));
-//             System.out.println("Input:");
-//             num1 = input.nextInt();
-//         }
-//     }
-//     static int powerOf(int m, int n) {
-//         int total = 1;
-//         while (n > 0) {
-//             total *= m;
-//             n--;
-//         }
-//         return total;
-//     }
-// }
 
 //////////////////////////////////////////////////////
 import java.util.*;
-
 //////////////////////////////////////////////////////
 public class quiz03_06 {
     static Scanner myScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        test();
+        test();
+        test();
+    }
 
+    public static void test() {
+        try {
+
+            System.out.println("Input 2數:(空格分開，enter結束)");
+            int a = Integer.parseInt(myScanner.next());
+            int b = Integer.parseInt(myScanner.next());
+
+            // 計算直到輸入 m=999 為止
+            // 使用test()的好處就是可以return，跳出程式
+            if (a >= 999) return;
+
+            // a^b 計算 a的b次方
+            int ans = 1;
+            for (int i = 1; i <= b; i++) {
+                ans *= a;
+            }
+            System.out.println(ans);
+        } catch (Exception e) {
+            System.out.println("輸入錯誤!!");
+        }
     }
 }
