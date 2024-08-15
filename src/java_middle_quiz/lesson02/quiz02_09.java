@@ -37,7 +37,7 @@ public class quiz02_09 {
 
     public static void test() {
 
-        try (Scanner myScanner = new Scanner(System.in)) {
+        try {
 
             double x, y;
             System.out.printf("請輸入x座標：");

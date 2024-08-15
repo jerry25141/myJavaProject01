@@ -45,7 +45,7 @@ public class quiz02_08 {
 
     public static void test_score() {
         // 之後都應該會用這種寫法 try Scanner 寫法
-        try (Scanner myScanner = new Scanner(System.in)) {
+        try {
 
             System.out.println("Input:");
             int g = myScanner.nextInt();

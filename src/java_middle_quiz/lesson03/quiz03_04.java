@@ -22,19 +22,20 @@ import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz03_04 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String argv[]) {
         int total = 0;
         int count = 0;
 
-        System.out.print("Please enter meal dollars or enter -1 to stop: ");
-        
+        System.out.println("Please enter meal dollars or enter -1 to stop: ");
+
         int s = 0;
-        s = myScanner.nextInt();   // 第一次輸入數值
+        s = myScanner.nextInt(); // 第一次輸入數值
         // 如果 -1 則停止
         while (s != -1) {
             total += s;
             count++;
-            System.out.print("Please enter meal dollars or enter -1 to stop: ");
+            System.out.println("Please enter meal dollars or enter -1 to stop: ");
             s = myScanner.nextInt();
         }
         System.out.println("餐點總費用:" + total);
