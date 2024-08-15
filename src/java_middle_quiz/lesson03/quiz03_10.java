@@ -11,34 +11,36 @@ package java_middle_quiz.lesson03;
 // 請輸入 n 的值(n > 0，且為偶數)：10
 // 2+4+...+10=30
 
-// import java.util.*;
-
-// public class JPA310a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String[] args) {
-//         int i = 0;
-//         int n = 0;
-//         int total = 0;
-//         do {
-//             System.out.printf("請輸入 n 的值(n > 0，且為偶數)：");
-//             n = keyboard.nextInt();
-//             if (n > 0 && n % 2 == 0) {
-//                 do {
-//                     i += 2;
-//                     total += i;
-//                 } while (i < n);
-//                 System.out.printf("2+4+...+%d=%d", n, total);
-//             }
-//         } while (!(n > 0 && n % 2 == 0));
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz03_10 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        test();
+    }
+
+    public static void test() {
+
+        int input = 0;
+        do {
+            System.out.print("\n請輸入 n 的值(n > 0，且為偶數):");
+            input = myScanner.nextInt();
+
+        } while (input % 2 != 0 || input < 0 || input == 0); // 除非是正偶數，跳出\
+
+        int n = input;
+        int ans = 0;
+        for (int i = 0; i <= n; i += 2)
+            ans += i;
+
+        if (n <= 2)
+            System.out.println("2=" + ans);
+        else if (n <= 4)
+            System.out.println("2+4=" + ans);
+        else
+            System.out.println("2+4+...+" + n + "=" + ans);
     }
 }
