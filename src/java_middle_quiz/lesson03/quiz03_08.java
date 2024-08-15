@@ -20,29 +20,33 @@ package java_middle_quiz.lesson03;
 // 請輸入消費金額，或輸入-1結束：-1
 // 電腦周邊總消費：26598
 
-// import java.util.*;
-
-// public class JPA308a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     static int i = -1;
-//     public static void main(String[] args) {
-//         int total = 0, s = 0;
-//         do {
-//             System.out.printf("請輸入消費金額，或輸入-1結束：");
-//             s = keyboard.nextInt();
-//             if (s != -1)
-//                 total += s;
-//         } while (s != -1);
-//         System.out.printf("電腦周邊總消費：%d", total);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz03_08 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        test();
+    }
+
+    public static void test() {
+        int input = 0;
+        int total = 0;
+        // 依照題目要求，使用 do while
+        do {
+            total += input;
+            System.out.println("請輸入消費金額，或輸入-1結束：");
+            try {
+                input = myScanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("輸入錯誤，請重新輸入。");
+                myScanner.next(); // 清除輸入緩衝區，並 重新提示使用者輸入(其實別亂打就好zzz)
+            }
+        } while (input != -1);
+
+        System.out.println("電腦周邊總消費：" + total);
+
     }
 }
