@@ -20,37 +20,49 @@ package java_middle_quiz.lesson03;
 // Input:
 // 999
 
-// import java.util.*;
-
-// public class JPA307a {
-//     public static void main(String argv[]) {
-//         int num1, num2;
-//         System.out.println("Input:");
-//         num1 = new Scanner(System.in).nextInt();
-//         while (num1 != 999) {
-//             num2 = new Scanner(System.in).nextInt();
-//             System.out.println(gcd(num1, num2));
-//             System.out.println("Input:");
-//             num1 = new Scanner(System.in).nextInt();
-//         }
-//     }
-//     static int gcd(int m, int n) {
-//         int result;
-//         while (n != 0) {
-//             result = m % n;
-//             m = n;
-//             n = result;
-//         }
-//         return m;
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz03_07 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+    }
+
+    public static void test() {
+        while (true) {
+            try {
+                System.out.println("Input 2數:(空格分開，enter結束,999跳出)");
+                int a = Integer.parseInt(myScanner.next());
+                // a >= 999 跳出 while(true) 無限迴圈
+                if (a >= 999) break;
+
+                int b = Integer.parseInt(myScanner.next());
+                //////////////////
+                // 最大公因數， 最大同時可整除 a 和 b 的數字
+                int ans = gcd(a, b);
+
+                System.out.println(ans);
+
+            } catch (Exception e) {
+                System.out.println("輸入錯誤!!");
+            }
+        }
+    }
+    // 最大公因數 //
+    public static int gcd(int a, int b) {
+        int result;
+        if (a < b) { // 保證 a > b
+            int t = a;
+            a = b;
+            b = t;
+        }
+        // 輾轉相除?
+        while (b != 0) {
+            result = a % b;
+            a = b;
+            b = result;
+        }
+        return a;
     }
 }
