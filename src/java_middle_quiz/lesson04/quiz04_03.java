@@ -17,39 +17,44 @@ package java_middle_quiz.lesson04;
 
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz04_03 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        test();
+        test();
+        test();
     }
 
     public static void test() {
-        System.out.print("Input n (0 <= n <= 16):");
+        System.out.print("Input m:");
         int m = myScanner.nextInt();
         // 999 跳出 + 0 <= n <= 16
         if (m == 999)
             return;
+        System.out.print("Input n:");
         int n = myScanner.nextInt();
 
         if (0 <= m && m <= 16) {
             int total1 = 1;
             int total2 = 1;
 
-
             // 呼叫 (尾端遞迴)
-            total1 = run_loop(m, n);
+            total1 = run_backfactorial(m, n, total1);
+            System.out.println(m + "^" + n + " 的Ans(尾端遞迴) = " + total1);
 
-            // 呼叫 (尾端遞迴)
-            total1 = run_loop(m, n);
+            // 呼叫 for 遞迴
+            total2 = run_loop(m, n);
+            System.out.println(m + "^" + n + " 的Ans(迴圈) = " + total2);
 
-            System.out.println(m + " 的階層 = " + total1);
         } else
             return;
     }
 
-//////////////////////////////////////////////////////
-    // !! 尾端遞迴 !! //
+    //////////////////////////////////////////////////////
+    // !! 尾端遞迴 進階 !! //
     static int run_backfactorial(int m, int n, int sum) {
         if (n == 1)
             return m * sum;
@@ -57,7 +62,7 @@ public class quiz04_03 {
             return run_backfactorial(m, n - 1, m * sum);
     }
 
-//////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
     // !! for 迴圈方法 !! //
     static int run_loop(int m, int n) {
         int sum = 1, i;
@@ -65,6 +70,6 @@ public class quiz04_03 {
             sum *= m;
         return sum;
     }
-//////////////////////////////////////////////////////
 
+    //////////////////////////////////////////////////////
 }
