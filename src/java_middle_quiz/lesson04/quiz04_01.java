@@ -11,36 +11,32 @@ package java_middle_quiz.lesson04;
 // 10 的階層 = 3628800
 // Input n (0 <= n <= 16):999
 
-// import java.util.Scanner;
-
-// public class JPA04 {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int n;
-        
-//         do {
-//             System.out.print("Input n (0 <= n <= 16):");
-//             n = keyboard.nextInt();
-            
-//             if(n >= 0 && n <= 16) 
-//                 System.out.printf("%d 的階乘 = %d\n", n,factorial(n));
-//         } while(n != 999);
-//     }
-    
-//     static int factorial(int n) {
-//         if(n == 1)
-//             return 1;
-//         else
-//             return n * factorial(n - 1);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz04_01 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+        test();
+        test();
+    }
+
+    public static void test() {
+        System.out.print("Input n (0 <= n <= 16):");
+        int n = myScanner.nextInt();
+
+        // 999 跳出 + 0 <= n <= 16
+        if(n == 999)
+            return;
+        if(0 <= n && n <= 16) {
+            int total = 1;
+            for (int i = n; i >= 1; i--)
+                total *= i;
+    
+            System.out.println(n + " 的階層 = " + total);
+        }
+        else 
+            return;
     }
 }
