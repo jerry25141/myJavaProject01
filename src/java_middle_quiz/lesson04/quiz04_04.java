@@ -16,36 +16,39 @@ package java_middle_quiz.lesson04;
 // 最大公因數為 = 5
 // Input m:999
 
-// import java.util.*;
-
-// public class JPA404a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int m, n, sum = 1;
-//         System.out.printf("Input m:");
-//         m = keyboard.nextInt();
-//         while (m != 999) {
-//             System.out.printf("Input n:");
-//             n = keyboard.nextInt();
-//             System.out.println("最大公因數為 = " + factorial(m, n));
-//             System.out.printf("Input m:");
-//             m = keyboard.nextInt();
-//         }
-//     }
-//     static int factorial(int m, int n) {
-//         if (n == 0)
-//             return m;
-//         else
-//             return factorial(n, m % n);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz04_04 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+        test();
+        test();
     }
+
+    public static void test() {
+        System.out.print("Input m:");
+        int m = myScanner.nextInt();
+        // 999 跳出 + 0 <= n <= 16
+        if (m == 999)
+            return;
+        System.out.print("Input n:");
+        int n = myScanner.nextInt();
+
+        int ans_GCD = 1;
+        // 呼叫 (尾端遞迴)
+        ans_GCD = run_back_GCD(m, n);
+        System.out.println(m + "^" + n + " 的Ans(尾端遞迴) = " + ans_GCD);
+    }
+//////////////////////////////////////////////////////
+    // !! 尾端遞迴 進階 !! //
+    static int run_back_GCD(int m, int n) {
+        if (n == 0) // 當餘數 == 0
+            return m;
+        else    // !! 重點(輾轉相除法) !! // 相除取餘數，再用餘數除以
+            return run_back_GCD(n, m % n);
+    }
+
+//////////////////////////////////////////////////////
 }
