@@ -15,38 +15,6 @@ package java_middle_quiz.lesson04;
 // Ans(迴圈) = 1728
 // Input m:999
 
-// import java.util.*;
-
-// public class JPA403a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int m, n, sum = 1;
-//         System.out.printf("Input m:");
-//         m = keyboard.nextInt();
-//         while (m != 999) {
-//             System.out.printf("Input n:");
-//             n = keyboard.nextInt();
-//             System.out.println("Ans(尾端遞迴) = " + backfactorial(m, n, sum));
-//             System.out.println("Ans(迴圈) = " + loop(m, n));
-//             System.out.printf("Input m:");
-//             m = keyboard.nextInt();
-//         }
-//     }
-//     static int loop(int m, int n) {
-//         int sum = 1, i;
-//         for (i = 1; i <= n; i++) {
-//             sum *= m;
-//         }
-//         return sum;
-//     }
-//     static int backfactorial(int m, int n, int sum) {
-//         if (n == 1)
-//             return m * sum;
-//         else
-//             return backfactorial(m, n - 1, m * sum);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
@@ -55,4 +23,48 @@ public class quiz04_03 {
     public static void main(String[] args) {
         
     }
+
+    public static void test() {
+        System.out.print("Input n (0 <= n <= 16):");
+        int m = myScanner.nextInt();
+        // 999 跳出 + 0 <= n <= 16
+        if (m == 999)
+            return;
+        int n = myScanner.nextInt();
+
+        if (0 <= m && m <= 16) {
+            int total1 = 1;
+            int total2 = 1;
+
+
+            // 呼叫 (尾端遞迴)
+            total1 = run_loop(m, n);
+
+            // 呼叫 (尾端遞迴)
+            total1 = run_loop(m, n);
+
+            System.out.println(m + " 的階層 = " + total1);
+        } else
+            return;
+    }
+
+//////////////////////////////////////////////////////
+    // !! 尾端遞迴 !! //
+    static int run_backfactorial(int m, int n, int sum) {
+        if (n == 1)
+            return m * sum;
+        else
+            return run_backfactorial(m, n - 1, m * sum);
+    }
+
+//////////////////////////////////////////////////////
+    // !! for 迴圈方法 !! //
+    static int run_loop(int m, int n) {
+        int sum = 1, i;
+        for (i = 1; i <= n; i++)
+            sum *= m;
+        return sum;
+    }
+//////////////////////////////////////////////////////
+
 }

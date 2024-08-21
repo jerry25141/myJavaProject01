@@ -34,25 +34,23 @@ public class quiz04_02 {
         if (n == 999)
             return;
         if (0 <= n && n <= 16) {
-
             int total = 1;
-            // for (int i = n; i >= 1; i--)
-            //     total *= i;
-            total = cal_run(n);
+            // 呼叫 遞迴
+            total = run_backfactorial(n, total);
 
             System.out.println(n + " 的階層 = " + total);
         } else
             return;
     }
 //////////////////////////////////////////////////////
-    // !! 遞迴執行 n! 運算 !!
-    public static int cal_run(int n) {
+
+    // !! 尾端遞迴 !! //
+    static int run_backfactorial(int n, int sum) {
         if (n == 1)
-            return  1;
-        else {
-            // 回傳遞迴
-            return (n * cal_run(n - 1));
-        }
+            return n * sum;
+        else
+            return run_backfactorial(n - 1, n * sum);
     }
+    
 //////////////////////////////////////////////////////
 }
