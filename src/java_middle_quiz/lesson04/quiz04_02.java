@@ -14,35 +14,6 @@ package java_middle_quiz.lesson04;
 // 8 的階層(迴圈) = 40320
 // Input n (0 <= n <= 16):999
 
-// import java.util.*;
-
-// public class JPA402a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int n, sum = 1;
-//         System.out.printf("Input n (0 <= n <= 16):");
-//         n = keyboard.nextInt();
-//         while (n != 999) {
-//             System.out.println(n + " 的階層(尾端遞迴) = " + backfactorial(n, sum));
-//             System.out.println(n + " 的階層(迴圈) = " + loop(n));
-//             System.out.printf("Input n (0 <= n <= 16):");
-//             n = keyboard.nextInt();
-//         }
-//     }
-//     static int loop(int n) {
-//         int sum = 1, i;
-//         for (i = 1; i <= n; i++) {
-//             sum *= i;
-//         }
-//         return sum;
-//     }
-//     static int backfactorial(int n, int sum) {
-//         if (n == 1)
-//             return sum;
-//         else
-//             return backfactorial(n - 1, n * sum);
-//     }
-// }
 
 //////////////////////////////////////////////////////
 import java.util.*;
@@ -50,6 +21,38 @@ import java.util.*;
 public class quiz04_02 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+        test();
+        test();
     }
+
+    public static void test() {
+        System.out.print("Input n (0 <= n <= 16):");
+        int n = myScanner.nextInt();
+
+        // 999 跳出 + 0 <= n <= 16
+        if (n == 999)
+            return;
+        if (0 <= n && n <= 16) {
+
+            int total = 1;
+            // for (int i = n; i >= 1; i--)
+            //     total *= i;
+            total = cal_run(n);
+
+            System.out.println(n + " 的階層 = " + total);
+        } else
+            return;
+    }
+//////////////////////////////////////////////////////
+    // !! 遞迴執行 n! 運算 !!
+    public static int cal_run(int n) {
+        if (n == 1)
+            return  1;
+        else {
+            // 回傳遞迴
+            return (n * cal_run(n - 1));
+        }
+    }
+//////////////////////////////////////////////////////
 }
