@@ -8,7 +8,7 @@ package java_middle_quiz.lesson04;
 // Input a string of numbers: 1234
 // 尾端遞迴：10
 // 迴圈：10
-// Input a string of numbers: 3456
+// Input a string of number((s: 3456
 // 尾端遞迴：18
 // 迴圈：18
 
