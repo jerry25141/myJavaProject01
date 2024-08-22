@@ -7,7 +7,7 @@ package java_middle_quiz.lesson05;
 //(4) 接續要求輸入第 1 個至第 n 個學生的成績，n 是剛才所輸入的學生人數。
 //(5) 計算出人數、總分及平均值 (不限制小數點位數)，顯示如執行結果參考畫面 (3)。
 //    提示：此題需使用 float 撰寫程式。
-//--------------------------------------------------------------------------------------------
+
 // 請輸入學生人數：5
 // 第1個學生的成績：81.24
 // 第2個學生的成績：56.14
@@ -18,30 +18,32 @@ package java_middle_quiz.lesson05;
 // 總分：337.55
 // 平均：67.509995
 
-// import java.util.*;
-
-// public class JPA502a {
-//     public static Scanner sc = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int n;
-//         System.out.print("請輸入學生人數：");
-//         n = sc.nextInt();
-//         float sum = 0, count[] = new float[n];
-//         for (int i = 0; i < n; i++) {
-//             System.out.printf("第%d個學生的成績：", i + 1);
-//             count[i] = sc.nextFloat();
-//             sum += count[i];
-//         }
-//         System.out.printf("人數：%d%n總分：%.2f%n平均：%f%n", n, sum, sum / n);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz05_02 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        test();
+    }
+
+    public static void test() {
+        // INPUT 成績 + 計算
+        System.out.print("請輸入學生人數：");
+        int n = myScanner.nextInt();
+
+        float total = 0;
+        float avg = 0;
+        for (int i = 1; i <= n; i++) {
+            System.out.print("第" + i + "個學生的成績：");
+            total += myScanner.nextFloat();
+            avg = total / (float) n;
+        }
+        // OUTPUT
+        System.out.println("人數：" + n);
+        System.out.println("總分：" + total);
+        System.out.println("平均：" + avg);
     }
 }
