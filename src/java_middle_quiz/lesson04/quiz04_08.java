@@ -10,33 +10,26 @@ package java_middle_quiz.lesson04;
 // Input a string: skills
 // slliks
 
-// import java.util.*;
-
-// public class JPA408a {
-//     static Scanner keyboard = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         String s, c;
-//         System.out.print("Input a string: ");
-//         s = keyboard.nextLine();
-//         System.out.printf("%s\n", reverse(s));
-//         System.out.print("Input a string: ");
-//         s = keyboard.nextLine();
-//         System.out.printf("%s\n", reverse(s));
-//     }
-//     public static String reverse(String s) {
-//         if (s.equals(""))
-//             return "";
-//         else
-//             return reverse(s.substring(1)) + s.substring(0, 1);
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
 //////////////////////////////////////////////////////
 public class quiz04_08 {
     static Scanner myScanner = new Scanner(System.in);
     public static void main(String[] args) {
-        
+        test();
+        test();
+    }
+
+    public static void test() {
+        System.out.print("Input a string: ");
+        String str_org = myScanner.nextLine();
+
+        // 字串反轉，使用高效率der StringBuilder
+        StringBuilder str_new = new StringBuilder();
+        int n = str_org.length();
+        for(int i = n-1; i >= 0; i--) 
+            str_new.append(str_org.charAt(i));
+
+        System.out.println(str_new);
     }
 }
