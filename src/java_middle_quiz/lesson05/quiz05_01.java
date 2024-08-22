@@ -5,7 +5,7 @@ package java_middle_quiz.lesson05;
 //(2) 程式執行時，顯示如執行結果參考畫面 (1)，顯示【請輸入10個整數：】並顯示【第1個整數：】，要求輸入第 1 個整數。
 //(3) 依序要求輸入第 1 個至第 10 個整數，顯示如執行結果參考畫面 (2)。
 //(4) 判斷輸入 10 個整數後，計算陣列中大於 60 有幾個，這些大於 60 的數值總合及平均值，顯示如執行結果參考畫面 (3)。
-//----------------------------------------------------------------------------------------
+
 // 請輸入10個整數：
 // 第1個整數：88
 // 第2個整數：59
@@ -21,33 +21,44 @@ package java_middle_quiz.lesson05;
 // 總合為470
 // 平均值為	78.33333333333333
 
-// import java.util.*;
-
-// public class JPA501a {
-//     static Scanner sc = new Scanner(System.in);
-//     public static void main(String args[]) {
-//         int count[] = new int[10], n = 0, sum = 0;
-//         System.out.println("請輸入10個整數：");
-//         for (int i = 0; i < 10; i++) {
-//             System.out.printf("第%d個整數：", i + 1);
-//             count[i] = sc.nextInt();
-//         }
-//         for (int i = 0; i < 10; i++) {
-//             if (count[i] > 60) {
-//                 sum += count[i];
-//                 n++;
-//             }
-//         }
-//         System.out.println("陣列中大於60的有" + n + "個\n總合為" + sum + "\n平均值為	" + (sum / (double) n));
-//     }
-// }
-
 //////////////////////////////////////////////////////
 import java.util.*;
+
 //////////////////////////////////////////////////////
 public class quiz05_01 {
     static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        
+        test();
+    }
+
+    public static void test() {
+        System.out.println("請輸入10個整數：");
+        int n = 10;
+
+        // Input 所有整數到 num_list
+        int[] num_list = new int[n + 1]; // Array從開始，長度方便使用改成 n+1
+        for (int i = 1; i <= n; i++) {
+            System.out.print("第" + i + "個整數：");
+            num_list[i] = myScanner.nextInt();
+        }
+
+        // 做輸出，分開做比較好看~
+        int count_60 = 0;
+        int sum = 0;
+
+        for (int each : num_list) {
+            // 大於60分的，算 total && avg
+            if (each >= 60) {
+                count_60++;
+                sum += each;
+            }
+        }
+        double avg = (double) sum / count_60;
+
+        // OUTPUT
+        System.out.println("陣列中大於60的有" + count_60 + "個");
+        System.out.println("總合為" + sum);
+        System.out.println("平均值為\t" + avg);
     }
 }
