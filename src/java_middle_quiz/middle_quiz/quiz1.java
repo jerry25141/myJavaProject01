@@ -62,6 +62,7 @@ public class quiz1 {
             }
         }
     }
+
     public static void my_you_win() {
         System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWW");
         System.out.println("!! 恭喜答對 q(≧▽≦q) !!");

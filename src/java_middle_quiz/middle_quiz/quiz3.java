@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class quiz3 {
     public static Scanner myScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         test();
     }
@@ -21,13 +22,22 @@ public class quiz3 {
 
         // 輸入要解密的文字
         System.out.println("請輸入要解密的文字：");
-        String textToDecrypt = myScanner.nextLine();
+        String textToDecrypt;
 
-        // 解密文字
-        String decryptedText = decrypt(textToDecrypt);
-        System.out.println("解密後的文字：\n" + decryptedText + "\n");
+        while (true) {
+            // 解密文字
+            textToDecrypt = myScanner.nextLine();
+            if (textToDecrypt.equals(encryptedText)) {
+                String decryptedText = decrypt(textToDecrypt);
+                System.out.println("解密後的文字：\n" + decryptedText + "\n");
+                break;
+            } else {
+                System.out.println("輸入錯誤，請重新輸入：");
+            }
+        }
 
     }
+
     ///////////////////////////////////////////////
     public static String my_user_input() {
         String input = "";
