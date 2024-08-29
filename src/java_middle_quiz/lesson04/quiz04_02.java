@@ -34,11 +34,14 @@ public class quiz04_02 {
         if (n == 999)
             return;
         if (0 <= n && n <= 16) {
-            int total = 1;
+            int total1 = 1;
+            int total2 = 1;
             // 呼叫 遞迴
-            total = run_backfactorial(n, total);
+            total1 = run_backfactorial(n, total1);
+            System.out.println(n + " 的階層(尾端遞迴) = " + total1);
 
-            System.out.println(n + " 的階層 = " + total);
+            total2 = run_for(n);
+            System.out.println(n + " 的階層(迴圈) = " + total2);
         } else
             return;
     }
@@ -52,5 +55,13 @@ public class quiz04_02 {
             return run_backfactorial(n - 1, n * sum);
     }
     
+    // 迴圈 //
+    static int run_for(int n) {
+        int ans = 1;
+        for(int i=1; i<=n; i++)
+            ans *= i;
+        return ans;
+    }
+
 //////////////////////////////////////////////////////
 }

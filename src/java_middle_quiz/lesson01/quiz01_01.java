@@ -21,6 +21,10 @@ public class quiz01_01 {
         System.out.println("I love Java!");
         // 印出 "Java is so good!" 到控制台
         System.out.println("Java is so good!");
+        
+        System.out.println("123");
     }
+    
+   
 }
 
